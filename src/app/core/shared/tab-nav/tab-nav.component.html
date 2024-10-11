@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    <li *ngFor="let tab of tabs"
+        (click)="setActiveTab(tab.value)"
+        [routerLink]="tab.route"
+        routerLinkActive="active"
+        [ngClass]="{'active': activeTab === tab.value}">
+      {{ tab.label }}
+    </li>
+  </ul>
+</nav>

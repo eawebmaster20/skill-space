@@ -1,0 +1,27 @@
+<div class="modal">
+  <div class="modal-header" [ngClass]="type">
+    <ng-container [ngSwitch]="type">
+      <i *ngSwitchCase="'error'" class="icon-error"></i>
+      <i *ngSwitchCase="'success'" class="icon-success"></i>
+      <i *ngSwitchCase="'confirmation'" class="icon-confirmation"></i>
+    </ng-container>
+    <h2>{{ title }}</h2>
+  </div>
+
+  <div class="modal-body">
+    <p>{{ message }}</p>
+  </div>
+
+  <div class="modal-footer">
+    <button
+      *ngIf="type === 'confirmation'"
+      class="btn cancel"
+      (click)="onCancel()"
+    >
+      {{ cancelText }}
+    </button>
+    <button class="btn confirm" [ngClass]="type" (click)="onConfirm()">
+      {{ confirmText }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div [class]="checkGroup==='true'? 'hide':''"  (click)="toggleCheck()" class="checkbox-container">
+    <span class="checkbox" [class]="value? 'checked-border':'unchecked-border'">
+        <span [class]="value? 'check':''"></span>
+    </span>
+    <span class="text">{{text}}</span>
+</div>
+
+<div [class]="checkGroup==='true'? '':'hide'" (click)="toggleCheck()" class="checkbox-container group">
+    <span class="flex">
+        <span class="checkbox" [class]="value? 'checked-border':'unchecked-border'">
+            <span [class]="value? 'check':''"></span>
+        </span>
+        <span class="text">{{text}}</span>
+    </span>
+
+    <span class="flex">
+        <span class="checkbox" [class]="value? 'unchecked-border':'checked-border'">
+            <span [class]="value? '':'check'"></span>
+        </span>
+        <span class="text">{{text2}}</span>
+    </span>
+</div>

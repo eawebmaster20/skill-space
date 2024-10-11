@@ -1,0 +1,11 @@
+<section>
+  <app-tab-nav
+    [tabs]="tabs"
+    [activeTab]="activeTab"
+    (tabChange)="setActiveTab($event)">
+  </app-tab-nav>
+  <mat-divider></mat-divider>
+  <div class="programs-view">
+    <router-outlet></router-outlet>
+  </div>
+</section>
